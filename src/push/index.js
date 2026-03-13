@@ -145,7 +145,7 @@ const pushBark = (title, desp) => {
   if (!bark.apiServer || !bark.sendKey) {
     return;
   }
-  const encodedUrl = `${bark.apiServer}/${bark.sendKey}/${encodeURIComponent(title)}/${encodeURIComponent(desp)}`;
+  const encodedUrl = `${bark.apiServer}/${bark.sendKey}/${encodeURIComponent(title)}/${encodeURIComponent(desp)}?group=${bark.group}`;
   superagent
     .get(encodedUrl)
     .then((response) => {
